@@ -3,8 +3,11 @@ interface = input("Enter the interface you want to change mac address: ")
 new_mac = input("Enter the new mac address: ")
 print("[+] Changing MAC address " + interface + " to " + new_mac)
 
+#Displays old mac address
+subprocess.call(["ifconfig",])
+
 #Turns off eth0
-subprocess.call(["ifconfig", interface, "up"])
+subprocess.call(["ifconfig", interface, "down"])
 
 #Writes new mac address
 subprocess.call(["ifconfig", interface, "hw", "ether", new_mac])
