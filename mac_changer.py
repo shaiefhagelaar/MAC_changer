@@ -2,14 +2,18 @@
 
 import subprocess
 
+interface = "eth0"
+new_mac = "00:11:22:33:34:15"
+print("[+] Changing MAC address " + interface + " to " + new_mac)
+
 #Turns off eth0
-subprocess.call(["ifconfig eth0 down"], shell=True)
+subprocess.call(["ifconfig " + interface + " down "], shell=True)
 
 #Writes new mac address
-subprocess.call(["ifconfig eth0 down hw ether 00:11:22:33:44:15"], shell=True)
+subprocess.call(["ifconfig " + interface + " hw ether " + new_mac], shell=True)
 
 #Turns on eth0
-subprocess.call(["ifconfig eth0 up"], shell=True)
+subprocess.call(["ifconfig " + interface + " up "], shell=True)
 
 #Displays new mac address
-subprocess.call(["ifconfig | grep eth0"], shell=True)
+subprocess.call(["ifconfig"], shell=True)
