@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-
+#This is unsafe code! Allows the user to put anything into the vars interface + new_mac 
 import subprocess
 
 interface = "eth0"
